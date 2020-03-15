@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-const Exercise = props => (
+const Game = props => (
     <tr>
         <td>{props.games.title}</td>
         <td>{props.games.rating}</td>
@@ -31,7 +31,7 @@ export default class GameList extends Component {
 
     gameList() {
         return this.state.games.map(currentgame => {
-            return <Exercise game={currentgame} key={currentgame._id}/>;
+            return <Game game={currentgame} key={currentgame._id}/>;
         })
     }
 
