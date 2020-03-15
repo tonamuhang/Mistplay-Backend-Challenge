@@ -29,7 +29,7 @@ router.route('/search').post((req, res) => {
 
 
     Games.find({
-        'title': {$regex: titleQuery}
+        'title': {$regex: titleQuery, $options: 'i'}
         },
         {'_id':0, 'title':1, 'rating':1, 'rCount':1})
         .limit(5)
