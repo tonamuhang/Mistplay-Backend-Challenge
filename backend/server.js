@@ -25,6 +25,7 @@ connection.once('open', () => {
 // Set up the endpoint
 const gameRouter = require('./routes/Games');
 
+app.use('/', gameRouter);
 app.use('/Games', gameRouter);
 
 
