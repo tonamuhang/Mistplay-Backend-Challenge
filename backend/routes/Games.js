@@ -24,9 +24,15 @@ router.route('/').get((req, res) => {
  * TODO: 2. Find relevant games by the given query
  */
 router.route('/search').post((req, res) => {
-    var query = req.params.query;
 
-    Games.find({}, {'_id':0, 'title':1, 'rating':1, 'rCount':1})
+    const titleQuery = req.query.title;
+
+
+    Games.find({
+        'title': {$regex: titleQuery}
+        },
+        {'_id':0, 'title':1, 'rating':1, 'rCount':1})
+        .limit(5)
         .sort({
             'rating': -1,
             'rCount': -1
