@@ -45,7 +45,10 @@ const gameSchema = new Schema({
         unique: false,
         trim: true
     }
-});
+},
+    {collection: 'Games'}
+);
+
 
 const Games = mongoose.model('Games', gameSchema);
 
