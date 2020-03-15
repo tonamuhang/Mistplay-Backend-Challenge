@@ -12,8 +12,11 @@ Note:
 [Here](https://expo.io/@tonami/MistplayChallenge) by following
 the instructions given on the website. This is only the front end.
 2. Make sure you have npm installed. You can run the node.js server by going inside of 
-the backend folder and then run: ```npm start```. You can test the functionalities by using 
-applications like Postman.
+the `backend` folder inside of the `mistplay-backend-challenge` folder and then run: ```npm start``` to start the 
+database server. You can test the queries by using 
+applications like Postman. Additionally, you can run `npm start` inside of the
+`mistplay-backend-challenge` folder to start a front end and check the query results from there.
+
 3. Unfortunately I'm not familiar with Android development(It's in fact my first 
 android app), so I
 haven't found a way to connect the front end and back end together. I'm
