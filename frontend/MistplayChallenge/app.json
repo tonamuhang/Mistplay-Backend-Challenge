@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Blank Template",
+    "name": "Mistplay Back End Challenge",
     "slug": "MistplayChallenge",
     "privacy": "public",
     "sdkVersion": "36.0.0",
@@ -25,6 +25,8 @@
     ],
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "description": "Mistplay backend challenge\nMuhang Li",
+    "githubUrl": "https://github.com/tonamuhang/Mistplay-Backend-Challenge"
   }
 }
