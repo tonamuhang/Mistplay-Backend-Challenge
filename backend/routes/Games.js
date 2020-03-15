@@ -21,3 +21,6 @@ router.route('/search').get((req, res) => {
 
 
 });
+
+
+module.exports = router;

@@ -22,6 +22,11 @@ connection.once('open', () => {
 });
 
 
+// Set up the endpoint
+const gameRouter = require('./routes/Games');
+
+app.use('/Games', gameRouter);
+
 
 // Starts server
 app.listen(port, () => {
