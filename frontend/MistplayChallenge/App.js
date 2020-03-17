@@ -7,7 +7,7 @@ import validate from "react-native-web/dist/exports/StyleSheet/validate";
 
 class HttpExample extends Component{
   state = {
-    data: ''
+    data: []
   };
 
   componentDidMount = () => {
@@ -18,23 +18,35 @@ class HttpExample extends Component{
         .then((resJson) => {
           console.log(resJson);
           this.setState({
-            data: resJson
-          })
+              data: [...this.state.data, ...resJson]
+          });
+          console.log(this.state.data);
         })
+
         .catch((err) => {
           console.error(err);
         })
   };
 
+
+  renderGames(){
+      return this.state.data.map((game, index) =>(
+          <Text key={index}>{game.title}</Text>
+      ));
+  }
+
+
   render() {
+
+
     return(
         <View>
-          <Text>
-            {this.state.data.body}
-          </Text>
+            {this.renderGames()}
         </View>
     )
   }
+
+
 
 }
 
