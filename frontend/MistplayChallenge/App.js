@@ -29,6 +29,9 @@ class HttpExample extends Component{
   };
 
 
+  /**
+   * returns a list of games inside of the state data array
+   */
   renderGames(){
       return this.state.data.map((game, index) =>(
           <Text key={index}>{game.title}</Text>
@@ -37,8 +40,6 @@ class HttpExample extends Component{
 
 
   render() {
-
-
     return(
         <View>
             {this.renderGames()}
@@ -55,7 +56,7 @@ class HttpExample extends Component{
 export default function App() {
   return (
     <View style={styles.container}>
-      {/*<Text>Please enter your search query: </Text>*/}
+      <Text>Please enter your search query: </Text>
       {/*<TextInput*/}
       {/*    style={{ height: 40, borderColor: 'gray', alignItems: 'center', borderWidth: 1 }}*/}
       {/*    placeholder={'Search games'}*/}
