@@ -8,6 +8,7 @@ let Games = require('../models/Games.model');
  */
 router.route('/').get((req, res) => {
     Games.find()
+        .limit(5)
         .then(games => res.json(games))
         .catch(err => res.status(400).json('Error: ' + err));
 });

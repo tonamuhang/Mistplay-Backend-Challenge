@@ -7,7 +7,6 @@ const Game = props => (
         <td>{props.games.title}</td>
         <td>{props.games.rating}</td>
         <td>{props.games.rCount}</td>
-
     </tr>
 );
 
@@ -19,7 +18,7 @@ export default class GameList extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/')
+        axios.get('http://localhost:5000')
             .then(response => {
                 this.setState({ games: response.data })
             })
@@ -48,7 +47,7 @@ export default class GameList extends Component {
                     </tr>
                     </thead>
                     <tbody>
-                    { this.gameList() }
+                    {/*{ this.gameList() }*/}
                     </tbody>
                 </table>
             </div>
