@@ -11,7 +11,7 @@ class HttpExample extends Component{
   };
 
   componentDidMount = () => {
-    fetch('http://localhost:5000/', {
+    fetch('https://mighty-ridge-36958.herokuapp.com/', {
       method:'GET'
     })
         .then((res) => res.json())
