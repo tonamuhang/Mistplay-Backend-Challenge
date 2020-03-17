@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import { TextInput } from 'react-native';
 import {Component} from 'react';
 import validate from "react-native-web/dist/exports/StyleSheet/validate";
@@ -53,25 +53,53 @@ class HttpExample extends Component{
 
 
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Please enter your search query: </Text>
-      {/*<TextInput*/}
-      {/*    style={{ height: 40, borderColor: 'gray', alignItems: 'center', borderWidth: 1 }}*/}
-      {/*    placeholder={'Search games'}*/}
-      {/*    placeholderTextColor="#202020"*/}
-      {/*  />*/}
-      <HttpExample/>
-    </View>
-  );
+export default class App extends Component{
+
+    searchGames = () => {
+        console.log("hello world")
+    };
+
+
+    render() {
+        return (
+            <View style={styles.container}>
+                <Text>Please enter your search query: </Text>
+                <TextInput
+                    style={{ height: 40, borderColor: 'gray', alignItems: 'center', borderWidth: 1 }}
+                    placeholder={'Search games'}
+                    placeholderTextColor="#202020"
+                />
+                <TouchableOpacity
+                    style={styles.button}
+                    onPress={this.searchGames}
+                >
+                    <Text> Touch Here </Text>
+                </TouchableOpacity>
+                <HttpExample/>
+            </View>
+        );
+    }
+
+
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+        container: {
+            flex: 1,
+            justifyContent: 'center',
+            paddingHorizontal: 10
+        },
+        button: {
+            alignItems: 'center',
+            backgroundColor: '#DDDDDD',
+            padding: 10
+        },
+        countContainer: {
+            alignItems: 'center',
+            padding: 10
+        },
+        countText: {
+            color: '#FF00FF'
+        }
+    })
+;
